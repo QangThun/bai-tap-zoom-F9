@@ -71,7 +71,7 @@ function calculator(operator, a, b) {
     }
 }
 
-// Ví dụ sử dụng:
+//vd
 console.log(calculator('+', 3, 5));
 console.log(calculator('-', 3, 5));
 console.log(calculator('/', 10, 2));
@@ -79,5 +79,60 @@ console.log(calculator('/', 10, 0));
 console.log(calculator('**', 2, 2));
 
 
+//luyentap(note)
+//bai1
 
+function investmentDecision(risk, revenue) {
+    if ((risk === "low" || risk === "medium") && revenue > 10) {
+        return "Đầu tư";
+    } else if (risk === "high" && revenue > 20) {
+        return "Đầu tư";
+    } else
+        return "Ko đầu tư";
+}
 
+console.log(investmentDecision("high", 10));//ko đầu tư
+console.log(investmentDecision("low", 10));//ko đầu tư
+console.log(investmentDecision("medium", 20)); //đầu tư
+
+//bai2
+function determineTravelPlan(weather, budget, interest) {
+    var interest = "adventure";
+    if (weather === "good") {
+        if (budget >= 5000) {
+            if (interest) return "Du lịch núi..."
+            return "Du lịch biển";
+        } else {
+            return "Khám phá địa phương...";
+        }
+    } else {
+        return "Hoãn kế hoạch..."
+    }
+}
+
+console.log(determineTravelPlan("good", 5000, true));//du lich nui
+
+//bai3
+function determineStudentCategory(point, promotionRate) {
+    if (point >= 90 && point <= 100 && promotionRate >= 50) {
+        return "Xuất sắc";
+    } else if (point >= 75 && point < 90 && promotionRate >= 70) {
+        return "Giỏi";
+    } else if (point >= 60 && point < 75 && promotionRate >= 60) {
+        return "Khá";
+    } else if (point < 60 || promotionRate < 60) {
+        return "Trung bình";
+    } else if (promotionRate < 50) {
+        return "Cần cải thiện"
+    }
+}
+
+console.log(determineStudentCategory(90, 50));
+
+//bai4
+function hasAccessToWorkroom(position, card, safetyTest) {
+    if (position || (card && safetyTest)) return "Có quyền truy cập..."
+    return "Không có quyền truy cập vào";
+}
+
+console.log(hasAccessToWorkroom(false, true, false));//ko có quyen

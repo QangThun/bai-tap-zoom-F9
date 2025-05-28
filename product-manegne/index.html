@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Product</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        .search-control {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .search-control input {
+            width: 98%;
+            margin-right: 12px;
+            border-radius: 18px;
+            padding-left: 10px;
+        }
+
+        .search-control button {
+            min-width: 80px;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            border-radius: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul class="product-list">
+            <!-- list product -->
+        </ul>
+
+        <div class="form">
+            <h2 class="form-heading">Create Product</h2>
+            <!-- input search -->
+            <div class="search-control">
+                <!-- <input type="text" 
+                    placeholder="Search Product...." 
+                    class="input-search"
+                    onkeydown="handleKeyDown(event)"
+                > -->
+                <input type="text" placeholder="Search Product...." class="input-search">
+                <button onclick="searchProduct()" class="btn-search">Seach</button>
+                <!-- <button class="btn-search">Seach</button> -->
+            </div>
+
+            <div class="form-list">
+                <div class="form-item">
+                    <label for="photo">Photo:</label>
+                    <input type="text" id="photo" placeholder="Enter Photo..." />
+                </div>
+
+                <div class="form-item">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" placeholder="Enter Name..." />
+                </div>
+
+                <div class="form-item">
+                    <label for="price">Price:</label>
+                    <input type="text" id="price" placeholder="Enter Price.." />
+                </div>
+
+                <div class="form-item">
+                    <label for="description">Description:</label>
+                    <textarea name="" id="description" placeholder="Enter description..." rows="7"></textarea>
+                </div>
+
+                <button id="create-product" onclick="handleCreate()">Create</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
