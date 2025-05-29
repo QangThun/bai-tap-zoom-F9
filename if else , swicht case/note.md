@@ -1,10 +1,10 @@
-1.Viết hàm investmentDecision để quyết định xem có nên đầu tư vào một dự án không. Đầu tư nếu dự án có rủi ro thấp hoặc trung bình và ROI (Return on Investment) dự kiến trên 10%, hoặc nếu dự án có rủi ro cao nhưng ROI trên 20%.
+    1.Viết hàm investmentDecision để quyết định xem có nên đầu tư vào một dự án không. Đầu tư nếu dự án có rủi ro thấp hoặc trung bình và ROI (Return on Investment) dự kiến trên 10%, hoặc nếu dự án có rủi ro cao nhưng ROI trên 20%.
 Giải:
 (risk = low || risk= medium ) && revenue >10 => đầu tư
 risk = high && revene >20 => đầu tư
 còn lại => ko đầu tư
 
-2. Viết hàm determineTravelPlan để xác định kế hoạch du lịch dựa trên thời tiết, ngân sách, và sở thích cá nhân. Nếu thời tiết tốt, ngân sách từ 5000 trở lên và thích phiêu lưu, chọn “Du lịch núi”; nếu không thích phiêu lưu, chọn “Du lịch biển”. Nếu ngân sách nhỏ hơn 5000, chọn “Khám phá địa phương”. Nếu thời tiết xấu, luôn chọn “Hoãn kế hoạch”.
+2. Viết hàm determineTravelPlan để xác định kế hoạch du lịch dựa trên thời tiết, ngân sách, và sở thích cá nhân. Nếu thời tiết tốt, ngân sách từ 5000 thírở lên và tch phiêu lưu, chọn “Du lịch núi”; nếu không thích phiêu lưu, chọn “Du lịch biển”. Nếu ngân sách nhỏ hơn 5000, chọn “Khám phá địa phương”. Nếu thời tiết xấu, luôn chọn “Hoãn kế hoạch”.
 Giải:
 weather= good && budget > 5000 && interest= adventure =>mountain travel
 weather= good && budget > 5000 && interest= not adventure =>
