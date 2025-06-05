@@ -218,3 +218,4 @@ function hasAccessToWorkroom(managementPosition, acccessCard, safetyTest) {
 }
 var result10 = hasAccessToWorkroom(true, false, false);
 console.log("kq10: ", result10);
+
