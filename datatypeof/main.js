@@ -113,39 +113,109 @@ function welcomeUser(name) {
     return "Tên ko hợp lệ...!";
 }
 
-console.log("Bài 1: ");
-console.log(welcomeUser("qangthun"));
-console.log(welcomeUser(123));
+// console.log("Bài 1: ");
+// console.log(welcomeUser("qangthun"));
+// console.log(welcomeUser(123));
 
 //2.Viết hàm calculateAge có hai tham số currentYear(năm hiện tại) và birthYear(năm sinh) để tính số tuổi .Hàm trả về số tuổi,trong trường hợp ko hợp lệ thì trả về 1
 function calculateAge(currentYear, birthYear) {
-    if (typeof currentYear !== 'number' || typeof birthYear !== 'number' || isNaN(currentYear) || isNaN(birthYear))
-        return 1;
-    return currentYear - birthYear;
+    let currentYearIsNumber = isNumber(currentYear);
+    let birthYearIsNumber = isNumber(currentYear);
+
+    if (isNumber(currentYear) && isNumber(currentYear)) {
+        return currentYear - birthYear;
+    }
+
+    return -1;
 }
 
-console.log("Bài 2: ");
-console.log(calculateAge(2025, 2005));
-console.log(calculateAge("", 2005));
+// console.log(calculateAge(2025, 2000)); // 25
+// console.log(calculateAge(2025, 1994)); // 31
+// console.log(calculateAge("2025", "abc")); // Error: -1
 
 //3.Viết hàm getElementAtIndex(lấy ptu tại mục) có hai tham số array , index .Hàm trả về giá trị tại index tương ứng .Nếu array ko p mảng , or index ko p số hợp lệ , or index nhỏ hơn 0 thì hàm trả về null
-function getElementAtIndex(array, index) {
-    return (!Array.isArray(array) || typeof index !== "number" || index < 0 || index >= array.length) ? null : array[index];
+function getElementAtIndex2(array, index) {
+    // array, index là số hợp lệ, index >= 0 ==> array[index]
+    // null
+    let elementIsArray = Array.isArray(array);
+    let indexIsNumber = isNumber(index);
+
+    if (elementIsArray && indexIsNumber && index >= 0) {
+        return array[index];
+    }
+
+    return null;
 }
 
-console.log("Bài 3: ");
-console.log(getElementAtIndex([1, 2, 3], 1));
-console.log(getElementAtIndex([0, 2, 5], 3));//nếu ko giới hạn index >= array.length thì sẽ hiện undefined
+// console.log(getElementAtIndex([123, 456, 789], 4));
+// console.log(getElementAtIndex2([123, 456, 789], -4));
 
 //4.Viết hàm checkEmpty(Kiểm tra trốg) có tham số value .Hàm trả về "Trống" nếu là null hoặc undefined , thop khác trả về ko trống
 function checkEmpty(value) {
-    return (value === null || value === undefined) ? "Trống" : "Không trống";
+    let valueIsNull = isNull(value);
+    let valueIsUndefined = isUndefined(value);
+
+    if (valueIsNull || valueIsUndefined) {
+        return 'Trống';
+    }
+
+    return 'Không trống';
 }
 
-console.log("Bài 4: ");
-console.log(checkEmpty("abc"));
-console.log(checkEmpty(null));
-console.log(checkEmpty(undefined));
-//ko dùng typeof cho null , array, object
+// console.log(checkEmpty(null)); // Trống
+// console.log(checkEmpty2(undefined)); // Trống
+// console.log(checkEmpty2("Hoan")); // Không trống
+//ko dùng typeof cho null , array, NaN
 
+//5.Hãy viết 1 hàm covertDataType nhận vào hai tham số value và type .Hàm này thực hiện chuyển đổi value sang kiểu dữ liệu sang kiểu đc chỉ định type , có thể là number , string , boolean .nếu type ko phải thì trả về chuỗi "Invalid
+// type"
+function covertDataType(value, type) {
+    switch (type) {
+        case "number":
+            return Number(value);
+        case "string":
+            return String(value);
+        case "boolean":
+            return Boolean(value);
+        default:
+            return "Invalid type";
+    }
+}
+console.log("Bài 5: ");
+console.log(covertDataType(123, "number"));
+console.log(covertDataType(1, "boolean"));
+console.log(covertDataType(123, "string"));
+console.log(covertDataType(123, "object"));
+
+//6.Viết hàm calcute nhận 3 tham số : a, b ,operator .Hàm này thực hiện phép toán ( add, subtract , multiply , divide), xử lý trường hợp NaN
+function caculate(a, b, operator) {
+    let isNotNumberA = isNaN(a);
+    let isNotNumberB = isNaN(b);
+
+    if (isNotNumberA || isNotNumberB) {
+        return "Invalid input number";
+    }
+    switch (operator) {
+        case "add":
+            let NumberA = Number(a);
+            let NumberB = Number(b);
+            var result = NumberA + NumberB;
+            return result;
+        case "subtract":
+            return a - b;
+        case "multiply":
+            return a * b;
+        case "divide":
+            if (b == 0) return "Cannot divide by zero";
+            return a / b;
+        default:
+            return "Invalid type";
+    }
+}
+
+console.log("Bài 6: ");
+console.log(caculate("5", "6", "add")); // 11
+console.log(caculate("10", "0", "divide")); // Cannot divide by zero
+console.log(caculate("5", "six", "add")); // Invalid input number
+console.log(caculate("10", "0", "percent")); // Invalid type
 
