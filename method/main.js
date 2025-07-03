@@ -1,183 +1,257 @@
-// var fullName = "Qang Thun";
-// console.log("🚀 ~ fullName:", fullName)
-// console.log(fullName.length)
-
-// var subString = fullName.charAt(3);
-// console.log(subString);
-
-// var subString1 = fullName[5];
-// console.log(subString1);
-
-// var subStr = fullName.slice(0, 3);
-// console.log(subStr);
-
-// var subStr2 = fullName.substring(5, 7);
-// console.log(subStr2);
-
-// var subStr3 = fullName.substr(7, 9);
-// console.log(subStr3);
-
-// var upperString = fullName.toUpperCase(0);
-// console.log(upperString);
-
-// var lowerString = fullName.toLowerCase(0);
-// console.log(lowerString);
-
-// var firstName = "Quang";
-// var lastName = "Thuan";
-// var fullName2 = firstName + " " + lastName;
-// console.log(fullName2);
-
-// var fullName3 = firstName.concat(" Thuan");
-// console.log(fullName3);
-
-// var trimString = fullName.trim();
-// console.log(trimString);
-
-// var heelo = fullName.repeat(2);
-// console.log(heelo);
-
-// var originString = "Hello World";
-// var newString3 = originString.replaceAll("Hello", "Bye");
-// console.log(newString3);
-
-// // 13. Biến chuỗi thành mảng: split
-// var myString4 = "html-css-javascript";
-
-// var arrayString = myString4.split("-");
-// console.log(arrayString)
-// // console.log(arrayString);
-
-// // 14. reverse(Đảo chuỗi)
-
-// function reverseString(str) {
-//     var strArr = str.split("");
-//     var reverseArr = strArr.reverse();
-//     var newStr = reverseArr.join("");
-//     return newStr;
-// }
-
-//  MẢNG
-// var courses = [
-//     "html",
-//     "css",
-//     "javascript",
-//     "php",
-//     "mysql",
-//     "aaaa"
+// nhớ 10% --> nhiều bài tập liên quan -> làm lại xem đi xem lại --> tự code lại 
+// const courses = [
+//   "html",
+//   "css",
+//   "javascript",
+//   null,
+//   undefined
 // ];
 
-// var courses2 = [
-//     "html2",
-//     "css2"
-// ];
+// 1. Độ dài 1 mảng .length
+// var coursesLength = courses.length;
+// console.log("🚀 ~ coursesLength:", coursesLength);
 
-// 1. độ dài phần tử của mảng: .length
-// var lengthCourses = courses.length;
-// console.log(lengthCourses);
+// 2. Thêm 1 phần tử vào mảng: push
+// courses.push("php");
+// courses.push("php1");
+// courses.push("php2");
+// console.log("🚀 ~ courses:", courses);
+// console.log("🚀 ~ coursesLength:", courses.length);
 
-// 2. Truy xuất các phần tử trong mảng
-// var htmlElement = courses[courses.length - 2]
-// console.log("🚀 ~ htmlElement:", htmlElement)
-// 3. Thêm phần tử vào cuối mảng: push
-// courses.push("mysql2");
-// console.log("🚀 ~ courses:", courses)
+// 3. Xóa phần tử cuối mảng pop
+const courses = [
+    "html",
+    "css",
+    "javascript",
+    null,
+    undefined
+];
 
-// courses.push("myhome");
-// console.log("🚀 ~ courses:", courses)
+var newCourses = courses.pop(); // ?A
+// console.log("🚀 ~ newCourses:", newCourses);
 
+var newCourses2 = courses.pop(); // ?B
+// courses // C
 
-// 4. Thêm phần tử vào đầu mảng: unshift
-// courses.unshift("mysql2");
-// console.log("🚀 ~ courses:", courses)
-
-// Xóa phần tử cuối mảng: pop();
 // courses.pop();
 // courses.pop();
-// console.log(courses);
+// courses.pop();
+// courses.pop();
+// courses.pop();
+// courses.pop();
+// courses.pop();
+// console.log("🚀 ~ newCourses2:", newCourses2);
+// console.log("🚀 ~ courses:", courses); // C
 
-// Xóa phần tử đầu mảng: shift();
-// courses.shift();
-// courses.shift();
-// courses.shift();
-// console.log(courses);
-// Nối các phần tử trong mảng
-// var newCourse = [1, 2, 3];
-// var courses3 = courses2.concat(courses, newCourse);
-// console.log(courses3);
+// 4. Thêm 1 hoặc nhiều phần tử vào đầu mảng: unshift()
+// courses.unshift("mysql", "mysql2", "mysql3");
+// console.log("🚀 ~ courses:", courses); // C
 
-// Sắp xếp các phần tử trong mảng: sort()
-// courses.sort();
-// courses.reverse();
-// console.log(courses);
+// 5. Xóa 1 hoặc nhiều phần tử đầu mảng shift()
+courses.shift();
+courses.shift();
+courses.shift();
+// console.log("🚀 ~ courses:", courses);
 
-// var numbers = [1, 4, 9, 2, 5];
-// c1
-// numbers.sort();
+// Lấy ra mảng con từ mảng gốc ["html"] - slice(start, end)
+// Cắt phần tử trong mảng theo index
+const courses2 = [
+    "html", // 0
+    "css", // 1
+    "javascript", // 2
+];
 
-// c2
-// numbers.sort((a, b) => b - a);
+// var newArr = courses2.slice(0, 1); // Ctrl + Alt + L
+// console.log("🚀 ~ newArr:", newArr);
 
-// slice(start, end)
-// var subCourses = courses.slice(0);
-// console.log("🚀 ~ subCourses:", subCourses);
+// var newArr = courses2.slice(1, 2); // ["css"]
+// console.log("🚀 ~ newArr:", newArr);
 
-// splice(index, quanlitydelete, add)
+// Các cách cắt tất cả phần tử bằng slice
+// 1. Mục đích
+// 2. Thực hành
+// 3. Xem kết quả -> kiến thức
 
-// var courses3 = [
-//     "html",
-//     "css",
-//     "javascript",
-//     "php",
-//     "mysql",
-//     "aaaa"
-// ];
+/**
+ * slice(0)
+ * slice(0, length),  slice(0, length)
+ * slice(0, 5)
+ */
 
-// mảng -> chuỗi: join
-// var str = courses3.join(",");
-// console.log("🚀 ~ str:", str);
+var newArr = courses2.slice(0);
+// console.log("🚀 ~ newArr:", newArr);
 
-// phương thức cơ bản
-// phương thức: every, some, find, filter, forEach, map
+// console.log(courses2.length);
 
+// var newArr2 = courses2.slice(0, courses2.length);
+// console.log("🚀 ~ newArr2:", newArr2);
 
-// s
+// var newArr3 = courses2.slice(0, 4);
+// console.log("🚀 ~ newArr2:", newArr3)
 
-// khai báo: function
-// tham số, đối số
-// return: Đây là message: 1
+// console.log(courses2 === newArr); // true, false x001z === x002z
 
-// Viết 1 hàm khi người dùng click vào nút click me
-// hiển thị câu message Đây là thông báo
+// So sánh nội dung của 2 array giống nhau, true
+const courses3 = [
+    "html",
+    "css",
+    "javascript",
+];
 
-// function showMessage2() {
-//     alert("Đây là thông báo");
+const courses3Copy = [
+    "html",
+    "css",
+    "javascript",
+];
+
+// keyword: JSON.stringify, lodash
+var stringCourse3 = JSON.stringify(courses3);
+var stringCourse4 = JSON.stringify(courses3Copy);
+
+// console.log(stringCourse3 === stringCourse4); // false
+// console.log(stringCourse3, typeof stringCourse3)
+
+// check input đầu vào có phải string hay không
+// function checkIsString(input) {
+//   return typeof input === "string";
 // }
 
-// function showMessage2() {
-//     prompt("Đây là thông báo");
-// }
-// BT2: Khi click vào click me thì lấy giá trị ô input yêu cầu người nhập tên, khi người dùng nhập
-// PKLinh thì hiển thị popup là 'Đây là bạn nữ' ==>
-// nam
-
-// function getRectArea(width, height) {
-//     var area = width * height;
-//     return area;
-// }
-
-// var result = getRectArea(4, 2);
+// var result = checkIsString(undefined);
 // console.log("🚀 ~ result:", result);
+// console.log(_.isEqual(courses3, courses3Copy)); // true, thư viện lodash
 
-function showMessage(message) {
-    confirm("Đây là thông báo nhé!");
-    return message;
-}
+// const obj1 = {
+//   name: "Hoan Nguyen"
+// };
 
-var message = showMessage("Đây là 11");
-if (message.includes('1')) {
-    prompt("Nam");
-} else {
-    prompt("nữ");
-}
+// const obj2 = {
+//   name: "Hoan Nguyen"
+// };
 
+// console.log(_.isEqual(obj1, obj2));
+
+//  Javascript Basic
+// kiểu dữ liệu (Data Types)
+
+/**
+ * number - 'number'
+ * string - 'string'
+ * undefined - undefined
+ * null - null, object
+ * boolean - boolean
+ * NaN - number
+ * object - "object"
+ * array - "object"
+ * function - "function"
+ * symbol - "symbol"
+ */
+
+// splice(start, deleteCount, item1, item2)
+// input
+const courses4 = [
+    "html", // 0
+    "css", // 1
+    "javascript" // 2,
+];
+
+const courses5 = [
+    "html",
+    "scss",
+    "javascript",
+];
+
+// courses4.splice(1, 1, "scss");
+// console.log(courses4);
+
+
+// Expect:
+// [
+//   "html",
+//   "php",
+//   "nodejs",
+//   "javascript",
+// ];
+// courses4.splice(1, 1, "php", "nodejs");
+// console.log("🚀 ~ courses4:", courses4)
+
+const students = [
+    {
+        id: 1,
+        name: "Hoan Nguyen",
+        age: 24,
+        address: "Cau Giay, HN"
+    },
+    {
+        id: 2,
+        name: "Thuan Pham",
+        age: 20,
+        address: "Tien Hai, Thai Binh"
+    },
+    {
+        id: 3,
+        name: "Minh Hoàng",
+        age: 22,
+        address: "An Dương, Hai Phong"
+    }
+];
+
+
+// Khi website tải xong, hiển thị sản phẩm 
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("hien thi sinh vien");
+});
+
+students.forEach((student) => {
+    console.log(student);
+});
+
+
+const students5 = [
+    {
+        id: 1,
+        name: "hoan Nguyen",
+        age: 24,
+        address: "Cau Giay, HN",
+    },
+    {
+        id: 2,
+        name: "thuan tham",
+        age: 20,
+        address: "Tien Hai, Thai Binh",
+    },
+    {
+        id: 3,
+        name: "MINH HOANG",
+        age: 22,
+        address: "An Dương, Hai Phong",
+    }
+];
+
+// Minh Hoang, Thuan Pham
+
+var newStudents = students5.map(student => {
+    return {
+        name: student.name
+    };
+}); // ???
+
+console.log("🚀 ~ newStudents:", newStudents); // clone array
+const tags = ["book", "book2", "book3"]; // ["#book", "#book2", "#book3"];
+
+var newTags = tags.map(tag => `#${tag}`);
+console.log(newTags);
+
+// for --> nhận --> áp lực --> bỏ công ty --> chuẩn bị kiến thức chắc --> luyện đánh 6,1 nắm
+// tự tin (kiến thức nhỏ --> nhỏ): tự em làm
+// nhiều kiến thức, không tự tin
+
+// method array....
+// live coding...
+// chủ đề
+// MAP, FILTER
+
+// trade off (time, công sức --> $$$$$), $$$$$ --> value, update bản thân
+//
+// bỏ công bỏ sức... tự em bỏ ra... tự bản thân thiếu cái gì
+// cancel, nghề output -> kết toán  3,4 fressher
+// mâp tập trung, mất niềm tin (thằng lowng 2x, bản thân cần cải thiện update...)

@@ -4,18 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Method array javascript</title>
+
+
+    <style>
+        .list-student {
+            padding-left: 0;
+        }
+
+        .list-student li {
+            border: 1px solid #333;
+            padding: 14px;
+        }
+
+        button {
+            padding: 8px 16px;
+            cursor: pointer;
+            border: 1px solid #333;
+            outline: none;
+            margin-right: 14px;
+        }
+    </style>
 </head>
 
 <body>
-    <h2>Javascript Basic</h2>
-    <!-- <button onclick="showMessage('show message 1')">Show Message 1</button>
+    <ul class="list-student">
+        <!-- list student -->
+    </ul>
 
-    <button onclick="showMessage('show message 2')">Show Message 2</button> -->
+    <button class="btn-edit" onclick="editStudent(3)">Sửa sinh viên</button>
 
-    <input type="text" placeholder="Nhập tên" id="text">
-    <button onclick="showMessage()">Click me</button>
+    <button class="btn-delete" onclick="deleteStudent('0')">Xóa sinh viên</button>
+
+    <a href="book">Click me</a>
+    <a href="book2">Click me2</a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+        integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="main.js"></script>
+    <script src="homework method.js"></script>
 </body>
 
 </html>
