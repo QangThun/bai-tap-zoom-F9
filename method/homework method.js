@@ -71,3 +71,201 @@ console.log("Filtered age >= 21:", filtered);
 console.log("ID > 2:", students.filter(s => s.id > 2));
 
 
+const courses = ["html", "css", "js"];
+
+var newCoure = courses.find((course, index, orginArr) => {
+    return course === "html";
+});
+
+// Tìm tất cả phần tử thỏa mã điều kiện: filter
+const arr = [];
+
+courses.filter((course) => {
+    if (course === "html") {
+        arr.push(course);
+    }
+});
+
+// console.log("🚀 ~ htmlsArr ~ htmlsArr:", arr);
+
+// some / every -> true / false
+// pass
+// const result = courses.some((course) => course.includes("html"));
+// console.log("🚀 ~ result:", result);
+
+// const result2 = courses.every((course) => {
+//   return course.length > 1;
+// });
+
+// var htmlStr = 'hoc lap trình lap';
+
+// var result = htmlStr.includes("LAP".toLowerCase(), 5);
+// console.log("🚀 ~ result:", result);
+
+// var result = courses.filter((course) => course.includes("hzzz"));
+// console.log("🚀 ~ result:", result);
+
+// var itemPop = courses.pop();
+// var itemPop = courses.pop();
+// console.log("🚀 ~ itemPop:", itemPop, courses);
+
+// courses
+// courses.reverse();
+// console.log("🚀 ~ courses:", courses);
+
+// flat - Làm phẳng mảng
+// arr.flat([depth]) - tùy chọn. Mặc định là 1
+
+const numbers = [1, 2, [3, 4, [5, 6, 7]], 8, 9];
+
+const flatArr = numbers.flat(0);
+// console.log("flatArr", flatArr);
+// Làm phẳng tất cả các phần tử trong mảng:
+
+// concat - Nối mảng
+// var courses2 = ['php', 'nodejs'];
+
+// var result = courses2.concat(courses, [null, false]);
+// console.log("🚀 ~ result:", result);
+
+// bài tập liên quan tính tổng tiền tất cả khóa học (front-end, back-end);
+// api -> frontend, api2 -> backend
+const frontendCourses = [
+    {
+        id: 1,
+        name: "html",
+        price: 600,
+        type: "front-end",
+    },
+    {
+        id: 2,
+        name: "css",
+        price: 400,
+        type: "front-end",
+    },
+];
+
+const backendCourses = [
+    {
+        id: 1,
+        name: "php",
+        price: 1200,
+    },
+    {
+        id: 2,
+        name: "nodejs",
+        price: 400,
+    },
+    {
+        id: 3,
+        name: "python",
+        price: 400,
+    },
+];
+
+// Khóa học frontend giá bao nhiêu
+var mapPriceFrontend = frontendCourses.reduce(
+    (totalPrice, course) => (totalPrice += course.price),
+    0
+);
+console.log(mapPriceFrontend);
+
+// Khóa học backend giá bao nhiêu
+var backEndPrice = backendCourses.reduce(
+    (total, course) => total + course.price,
+    0
+);
+
+console.log(backEndPrice);
+
+// Tổng khóa học bao nhiêu
+// console.log(`Tổng khóa học::::`, mapPriceFrontend + backEndPrice);
+// const courses = [
+//   "html",
+//   "css",
+//   "javascript",
+// ];
+
+// const coursesList = frontendCourses.concat(backendCourses);
+// console.log("🚀 ~ coursesList:", coursesList);
+
+// var total = coursesList.reduce((total, course) => total + course.price, 0);
+// console.log("total", total);
+
+const courese6 = [
+    {
+        id: 1,
+        name: "html",
+        price: 600,
+        type: "front-end",
+    },
+    {
+        id: 2,
+        name: "css",
+        price: 400,
+        type: "front-end",
+    },
+    {
+        id: 3,
+        name: "php",
+        price: 1200,
+        type: "back-end",
+    },
+    {
+        id: 4,
+        name: "nodejs",
+        price: 400,
+        type: "back-end",
+    },
+    {
+        id: 5,
+        name: "python",
+        price: 400,
+        type: "back-end",
+    },
+];
+
+var frontEndPrice = courese6.reduce((total, course) => {
+
+    // if (course.type === "front-end") {
+    //   return total + course.price;
+    // } else {
+    //   return total;
+    // }
+
+    return course.type === "front-end" ? total + course.price : total;
+}, 0);
+
+var frontEndPrice = courese6.reduce((total, course) => {
+    return course.type === "front-end" ? total + course.price : total;
+}, 0);
+
+// var backEndPrice = courese6.reduce((total, course) => {
+//   if (course.type === 'back-end') return total + course.price;
+// });
+
+// var fontEndCourses = courese6.filter((course) => course.type === "front-end");
+// var fontEndPrice = fontEndCourses.reduce(
+//   (acc, course) => acc + course.price,
+//   0
+// );
+
+// var total = courese6
+//   .filter((course) => course.type === "front-end")
+//   .reduce((sum, course) => sum + course.price, 0)
+
+// join(separator)
+// Gộp các phần tử trong mảng --> chuỗi
+// const courses9 = ["html", "css", "js"];
+// const result = courses9.join('-');
+
+
+// // includes: kiểm tra phần tử có tồn tại trong mảng hay chuỗi
+// const resultInclu = courses9.includes("html");
+// console.log("🚀 ~ resultInclu:", resultInclu);
+
+// indexOf(value) / lastIndexOf - Tìm vị trí xuất hiện của phần tử đầu / cuối
+
+const courese10 = ["html", "cssz", "css", "css"];
+const resultIndex0f = courese10.lastIndexOf("css");
+console.log("🚀 ~ resultIndex0f:", resultIndex0f);

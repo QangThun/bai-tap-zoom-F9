@@ -19,7 +19,7 @@
 17. reverse
 18. concat
 19. join
-20. includes
+20. includes : kiểm tra phần tử có tồn tại trong mảng hay chuỗi
 21. indexOf, lastIndexOf, findIndex
 22. at
 
