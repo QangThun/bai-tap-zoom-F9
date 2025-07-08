@@ -9,10 +9,10 @@ function send(method, url, callback) {
                 if (typeof callback === "function") {
                     callback(xhr.responseText);
                 } else {
-                    console.error("Dữ liệu truyền sai định dạng callback");
+                    console.log("Dữ liệu truyền sai định dạng callback");
                 }
             } else {
-                console.error("Lỗi tải dữ liệu từ " + url);
+                console.log("Lỗi tải dữ liệu từ " + url);
             }
         }
     };
